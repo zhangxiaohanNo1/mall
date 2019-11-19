@@ -4,7 +4,9 @@ import com.macro.mall.model.PmsFeightTemplate;
 import com.macro.mall.model.PmsFeightTemplateExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PmsFeightTemplateMapper {
     long countByExample(PmsFeightTemplateExample example);
 

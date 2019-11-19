@@ -4,7 +4,9 @@ import com.macro.mall.model.SmsHomeRecommendSubject;
 import com.macro.mall.model.SmsHomeRecommendSubjectExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SmsHomeRecommendSubjectMapper {
     long countByExample(SmsHomeRecommendSubjectExample example);
 

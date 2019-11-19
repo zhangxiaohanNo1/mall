@@ -4,7 +4,9 @@ import com.macro.mall.model.UmsMemberMemberTagRelation;
 import com.macro.mall.model.UmsMemberMemberTagRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UmsMemberMemberTagRelationMapper {
     long countByExample(UmsMemberMemberTagRelationExample example);
 

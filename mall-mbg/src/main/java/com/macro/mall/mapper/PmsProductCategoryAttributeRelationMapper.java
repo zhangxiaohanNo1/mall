@@ -4,7 +4,9 @@ import com.macro.mall.model.PmsProductCategoryAttributeRelation;
 import com.macro.mall.model.PmsProductCategoryAttributeRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PmsProductCategoryAttributeRelationMapper {
     long countByExample(PmsProductCategoryAttributeRelationExample example);
 

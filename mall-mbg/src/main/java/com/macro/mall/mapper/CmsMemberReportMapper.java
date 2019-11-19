@@ -4,7 +4,9 @@ import com.macro.mall.model.CmsMemberReport;
 import com.macro.mall.model.CmsMemberReportExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CmsMemberReportMapper {
     long countByExample(CmsMemberReportExample example);
 

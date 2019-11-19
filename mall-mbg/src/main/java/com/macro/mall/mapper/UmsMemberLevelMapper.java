@@ -4,7 +4,9 @@ import com.macro.mall.model.UmsMemberLevel;
 import com.macro.mall.model.UmsMemberLevelExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UmsMemberLevelMapper {
     long countByExample(UmsMemberLevelExample example);
 

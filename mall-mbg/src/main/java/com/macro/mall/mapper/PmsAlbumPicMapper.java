@@ -4,7 +4,9 @@ import com.macro.mall.model.PmsAlbumPic;
 import com.macro.mall.model.PmsAlbumPicExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PmsAlbumPicMapper {
     long countByExample(PmsAlbumPicExample example);
 

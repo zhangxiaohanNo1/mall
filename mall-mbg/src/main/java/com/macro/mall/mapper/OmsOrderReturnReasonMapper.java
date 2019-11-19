@@ -4,7 +4,9 @@ import com.macro.mall.model.OmsOrderReturnReason;
 import com.macro.mall.model.OmsOrderReturnReasonExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface OmsOrderReturnReasonMapper {
     long countByExample(OmsOrderReturnReasonExample example);
 

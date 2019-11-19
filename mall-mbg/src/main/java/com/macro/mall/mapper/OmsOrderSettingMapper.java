@@ -4,7 +4,9 @@ import com.macro.mall.model.OmsOrderSetting;
 import com.macro.mall.model.OmsOrderSettingExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface OmsOrderSettingMapper {
     long countByExample(OmsOrderSettingExample example);
 

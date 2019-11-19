@@ -4,7 +4,9 @@ import com.macro.mall.model.SmsFlashPromotionProductRelation;
 import com.macro.mall.model.SmsFlashPromotionProductRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SmsFlashPromotionProductRelationMapper {
     long countByExample(SmsFlashPromotionProductRelationExample example);
 

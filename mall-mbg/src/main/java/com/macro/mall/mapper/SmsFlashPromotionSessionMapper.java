@@ -4,7 +4,9 @@ import com.macro.mall.model.SmsFlashPromotionSession;
 import com.macro.mall.model.SmsFlashPromotionSessionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SmsFlashPromotionSessionMapper {
     long countByExample(SmsFlashPromotionSessionExample example);
 

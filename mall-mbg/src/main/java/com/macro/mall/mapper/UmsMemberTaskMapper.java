@@ -4,7 +4,9 @@ import com.macro.mall.model.UmsMemberTask;
 import com.macro.mall.model.UmsMemberTaskExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UmsMemberTaskMapper {
     long countByExample(UmsMemberTaskExample example);
 

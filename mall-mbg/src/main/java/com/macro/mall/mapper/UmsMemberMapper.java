@@ -4,7 +4,9 @@ import com.macro.mall.model.UmsMember;
 import com.macro.mall.model.UmsMemberExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UmsMemberMapper {
     long countByExample(UmsMemberExample example);
 

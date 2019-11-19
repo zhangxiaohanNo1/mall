@@ -4,7 +4,9 @@ import com.macro.mall.model.SmsHomeAdvertise;
 import com.macro.mall.model.SmsHomeAdvertiseExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SmsHomeAdvertiseMapper {
     long countByExample(SmsHomeAdvertiseExample example);
 

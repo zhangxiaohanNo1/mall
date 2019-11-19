@@ -4,7 +4,9 @@ import com.macro.mall.model.UmsIntegrationConsumeSetting;
 import com.macro.mall.model.UmsIntegrationConsumeSettingExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UmsIntegrationConsumeSettingMapper {
     long countByExample(UmsIntegrationConsumeSettingExample example);
 

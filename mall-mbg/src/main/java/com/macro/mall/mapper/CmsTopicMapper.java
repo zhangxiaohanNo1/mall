@@ -4,7 +4,9 @@ import com.macro.mall.model.CmsTopic;
 import com.macro.mall.model.CmsTopicExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CmsTopicMapper {
     long countByExample(CmsTopicExample example);
 

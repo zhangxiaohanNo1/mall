@@ -4,7 +4,9 @@ import com.macro.mall.model.PmsCommentReplay;
 import com.macro.mall.model.PmsCommentReplayExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PmsCommentReplayMapper {
     long countByExample(PmsCommentReplayExample example);
 

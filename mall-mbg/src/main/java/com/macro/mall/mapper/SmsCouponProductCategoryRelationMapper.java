@@ -4,7 +4,9 @@ import com.macro.mall.model.SmsCouponProductCategoryRelation;
 import com.macro.mall.model.SmsCouponProductCategoryRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SmsCouponProductCategoryRelationMapper {
     long countByExample(SmsCouponProductCategoryRelationExample example);
 

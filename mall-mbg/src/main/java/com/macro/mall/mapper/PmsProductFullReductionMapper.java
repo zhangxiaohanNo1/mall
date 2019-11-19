@@ -4,7 +4,9 @@ import com.macro.mall.model.PmsProductFullReduction;
 import com.macro.mall.model.PmsProductFullReductionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PmsProductFullReductionMapper {
     long countByExample(PmsProductFullReductionExample example);
 

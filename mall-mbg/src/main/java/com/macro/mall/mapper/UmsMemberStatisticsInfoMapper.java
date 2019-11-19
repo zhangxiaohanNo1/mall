@@ -4,7 +4,9 @@ import com.macro.mall.model.UmsMemberStatisticsInfo;
 import com.macro.mall.model.UmsMemberStatisticsInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UmsMemberStatisticsInfoMapper {
     long countByExample(UmsMemberStatisticsInfoExample example);
 

@@ -4,7 +4,9 @@ import com.macro.mall.model.CmsHelpCategory;
 import com.macro.mall.model.CmsHelpCategoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CmsHelpCategoryMapper {
     long countByExample(CmsHelpCategoryExample example);
 

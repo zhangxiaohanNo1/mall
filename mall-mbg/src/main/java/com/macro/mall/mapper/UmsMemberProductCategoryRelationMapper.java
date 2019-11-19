@@ -4,7 +4,9 @@ import com.macro.mall.model.UmsMemberProductCategoryRelation;
 import com.macro.mall.model.UmsMemberProductCategoryRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UmsMemberProductCategoryRelationMapper {
     long countByExample(UmsMemberProductCategoryRelationExample example);
 

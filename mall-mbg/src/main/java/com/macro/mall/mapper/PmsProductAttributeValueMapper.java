@@ -4,7 +4,9 @@ import com.macro.mall.model.PmsProductAttributeValue;
 import com.macro.mall.model.PmsProductAttributeValueExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PmsProductAttributeValueMapper {
     long countByExample(PmsProductAttributeValueExample example);
 

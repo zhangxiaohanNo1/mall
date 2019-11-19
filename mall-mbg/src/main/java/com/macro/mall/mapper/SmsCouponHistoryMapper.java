@@ -4,7 +4,9 @@ import com.macro.mall.model.SmsCouponHistory;
 import com.macro.mall.model.SmsCouponHistoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SmsCouponHistoryMapper {
     long countByExample(SmsCouponHistoryExample example);
 

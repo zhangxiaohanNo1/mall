@@ -4,7 +4,9 @@ import com.macro.mall.model.SmsHomeBrand;
 import com.macro.mall.model.SmsHomeBrandExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SmsHomeBrandMapper {
     long countByExample(SmsHomeBrandExample example);
 

@@ -4,7 +4,9 @@ import com.macro.mall.model.OmsCompanyAddress;
 import com.macro.mall.model.OmsCompanyAddressExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface OmsCompanyAddressMapper {
     long countByExample(OmsCompanyAddressExample example);
 
