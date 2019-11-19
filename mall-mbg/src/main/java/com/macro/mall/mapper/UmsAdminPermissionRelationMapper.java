@@ -4,7 +4,9 @@ import com.macro.mall.model.UmsAdminPermissionRelation;
 import com.macro.mall.model.UmsAdminPermissionRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UmsAdminPermissionRelationMapper {
     long countByExample(UmsAdminPermissionRelationExample example);
 
