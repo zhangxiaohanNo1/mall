@@ -1,6 +1,7 @@
 package com.macro.mall.security.config;
 
 import com.macro.mall.security.component.JwtAuthenticationTokenFilter;
+import com.macro.mall.security.component.MyOwnFilter;
 import com.macro.mall.security.component.RestAuthenticationEntryPoint;
 import com.macro.mall.security.component.RestfulAccessDeniedHandler;
 import com.macro.mall.security.util.JwtTokenUtil;
@@ -27,9 +28,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity
                 .authorizeRequests();
+        //放行静态文件 不可以注释掉
         for (String url : ignoreUrlsConfig().getUrls()) {
             registry.antMatchers(url).permitAll();
         }
+        registry.antMatchers("/admin/login","/admin/register")
+                .permitAll();
         //允许跨域请求的OPTIONS请求
         registry.antMatchers(HttpMethod.OPTIONS)
                 .permitAll();
@@ -51,7 +55,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(restAuthenticationEntryPoint())
                 // 自定义权限拦截器JWT过滤器
                 .and()
-                .addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(myOwnFilter(), JwtAuthenticationTokenFilter.class);
     }
 
     @Override
@@ -96,4 +101,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new JwtTokenUtil();
     }
 
+    @Bean
+    public MyOwnFilter myOwnFilter() {
+        return new MyOwnFilter();
+    }
 }

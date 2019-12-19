@@ -14,6 +14,7 @@ import com.macro.mall.mapper.UmsAdminPermissionRelationMapper;
 import com.macro.mall.mapper.UmsAdminRoleRelationMapper;
 import com.macro.mall.model.*;
 import com.macro.mall.security.util.JwtTokenUtil;
+import com.macro.mall.service.RedisService;
 import com.macro.mall.service.UmsAdminService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,7 +62,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     private UmsAdminPermissionRelationDao adminPermissionRelationDao;
     @Autowired
     private UmsAdminLoginLogMapper loginLogMapper;
-
+    @Autowired
+    private RedisService redisService;
     @Override
     public UmsAdmin getAdminByUsername(String username) {
         UmsAdminExample example = new UmsAdminExample();
@@ -102,10 +104,14 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             if(!passwordEncoder.matches(password,userDetails.getPassword())){
                 throw new BadCredentialsException("密码不正确");
             }
+            //清除用户redis登出的key
+            redisService.remove(username);
+            redisService.set("operate","login");
+            String v = redisService.get(username);
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
             token = jwtTokenUtil.generateToken(userDetails);
-//            updateLoginTimeByUsername(username);
+//          updateLoginTimeByUsername(username);
             insertLoginLog(username);
         } catch (AuthenticationException e) {
             LOGGER.warn("登录异常:{}", e.getMessage());
@@ -273,5 +279,13 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             return new AdminUserDetails(admin,permissionList);
         }
         throw new UsernameNotFoundException("用户名或密码错误");
+    }
+
+    @Override
+    public String logout(String username) {
+        redisService.set(username, "logout");
+        redisService.set("operate","logout");
+        String v = redisService.get(username);
+        return "admin";
     }
 }

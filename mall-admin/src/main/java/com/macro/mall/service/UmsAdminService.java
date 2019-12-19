@@ -90,4 +90,6 @@ public interface UmsAdminService {
      * 获取用户信息
      */
     UserDetails loadUserByUsername(String username);
+
+    String logout(String username);
 }
